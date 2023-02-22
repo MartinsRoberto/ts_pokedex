@@ -81,5 +81,11 @@ body {
 }
 
 .loading{
-  background-color: #6666bb;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.loading div{
+  font-weight: bold;
+  font-size: 2em;
 }
