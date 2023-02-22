@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
 import PokeList from './components/PokeList'
 import Generation from './components/Generation'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [gen, setGen] = useState<number>(1)
+
+  const handleGeneration = (generation: number) => {
+    setGen(generation)
+  }
 
   return (
     <div className="App">
-      <Generation />
-      <PokeList gen={1} />
+      <Generation handleGeneration={handleGeneration} />
+      <PokeList gen={gen} />
     </div>
   )
 }
