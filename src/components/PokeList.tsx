@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import pokeFetch from '../axios/config'
+import { pokeFetch } from '../axios/config'
 
 import './PokeList.css'
 
@@ -62,12 +62,12 @@ const PokeList = ({ gen, handleSelectPokemon }: Props) => {
   }, [gen])
 
   return (
-    <div className='poke-table'>
+    <div id='poke-table'>
       {isLoading && <div className='loading'>Capturando pokemon......</div>}
 
       {pokeList.length > 0 && pokeList.map((poke, index) => (
         <div key={index} className="poke-card" onClick={() => handleSelectPokemon(poke.id)}>
-          <img src={poke.img} alt="" width={100} />
+          <img src={poke.img} alt="" />
           <div className="id">#{poke.id.toString().padStart(3, '0')}</div>
           <div className="name">{poke.name}</div>
           <div className="types">
